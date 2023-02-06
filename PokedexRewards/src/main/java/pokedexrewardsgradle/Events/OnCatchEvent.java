@@ -13,13 +13,11 @@ public final class OnCatchEvent implements Listener {
     PluginLogger logger;
 
     public OnCatchEvent(PluginLogger logger) {
-        super();
         this.logger = logger;
     }
     
     @EventHandler
-    public void onPokemonCaught(CaptureEvent.SuccessfulCapture successfulCapture) {
+    public void onPokemonCaught(CaptureEvent successfulCapture) {
         logger.info("A pokemon was successfully caught!");
-
     }
 }
