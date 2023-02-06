@@ -1,0 +1,12 @@
+name: PokedexRewards
+main: pokedexrewardsgradle.PokedexRewardsMain
+version: 0.1
+author: Falln
+commands:
+    healer:
+        description: Type this command to heal all of your Pixelmon!
+        usage: "/healer - Automatically heals all pokemon in your party"
+        permison-message: You don't have <permission>
+    dexreward:
+        description: Command for claiming item rewards that come with collecting a progressively higher ammount of pokemon!
+        usage: "/dexrewards claim - Checks if you have an available Pokedex reward to claim"
