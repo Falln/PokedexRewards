@@ -6,9 +6,17 @@ package pokedexrewardsgradle;
 import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import pokedexrewardsgradle.Commands.BreedIntercept;
+import pokedexrewardsgradle.Commands.CheckSpawnsIntercept;
 import pokedexrewardsgradle.Commands.DexRewards;
+import pokedexrewardsgradle.Commands.EVsIntercept;
+import pokedexrewardsgradle.Commands.EndBattleIntercept;
+import pokedexrewardsgradle.Commands.IVsIntercept;
+import pokedexrewardsgradle.Commands.LevelingIntercept;
+import pokedexrewardsgradle.Commands.PokePCIntercept;
 import pokedexrewardsgradle.Commands.PokehealIntercept;
-import pokedexrewardsgradle.Events.OnCatchEvent;
+import pokedexrewardsgradle.Commands.RedeemFossilIntercept;
+import pokedexrewardsgradle.Commands.TradeSimIntercept;
 
 /**
  * Hello world!
@@ -22,9 +30,17 @@ public final class PokedexRewardsMain extends JavaPlugin {
         //Debug log
         getLogger().info("onEnable has been invoked!");
 
-        getServer().getPluginManager().registerEvents(new OnCatchEvent((PluginLogger) getLogger()), this);
         this.getCommand("dexreward").setExecutor(new DexRewards((PluginLogger) getLogger()));
         this.getCommand("healer").setExecutor(new PokehealIntercept((PluginLogger) getLogger()));
+        this.getCommand("pcopen").setExecutor(new PokePCIntercept((PluginLogger) getLogger()));
+        this.getCommand("trader").setExecutor(new TradeSimIntercept((PluginLogger) getLogger()));
+        this.getCommand("daycare").setExecutor(new BreedIntercept((PluginLogger) getLogger()));
+        this.getCommand("checkivs").setExecutor(new IVsIntercept((PluginLogger) getLogger()));
+        this.getCommand("checkevs").setExecutor(new EVsIntercept((PluginLogger) getLogger()));
+        this.getCommand("fossil").setExecutor(new RedeemFossilIntercept((PluginLogger) getLogger()));
+        this.getCommand("flee").setExecutor(new EndBattleIntercept((PluginLogger) getLogger()));
+        this.getCommand("togglelvls").setExecutor(new LevelingIntercept((PluginLogger) getLogger()));
+        this.getCommand("spawns").setExecutor(new CheckSpawnsIntercept((PluginLogger) getLogger()));
     }
 
     @Override

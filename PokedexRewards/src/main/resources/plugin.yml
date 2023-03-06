@@ -1,6 +1,6 @@
 name: PokedexRewards
 main: pokedexrewardsgradle.PokedexRewardsMain
-version: 0.1
+version: 0.2
 author: Falln
 commands:
     healer:
@@ -10,3 +10,40 @@ commands:
     dexreward:
         description: Command for claiming item rewards that come with collecting a progressively higher ammount of pokemon!
         usage: "/dexrewards claim - Checks if you have an available Pokedex reward to claim"
+        permission-message: You do not have <permission>
+    pcopen:
+        description: Type this command to open your pc remotely
+        usage: "/pcopen - Opens your pc"
+        permission-message: You do not have <permission>
+    trader:
+        description: Type this command to open a trade window
+        usage: "/trader - Opens a trade window"
+        permission-message: You do not have <permission>
+    daycare:
+        description: Opens up the daycare block interface allowing you to breed pokemon
+        usage: "/daycare - Opens up the Daycare block window"
+        permission-message: You do not have <permission>
+    checkivs:
+        description: Checks the IVs of the pokemon in the slot listed
+        usage: "/checkivs [slot] - checks the IVs of the pokemon in the given slot of your party"
+        permission-message: You do not have <permission>
+    checkevs:
+        description: Checks the EVs of the pokemon in the slot listed
+        usage: "/checkevs [slot] - checks the EVs of the pokemon in the given slot of your party"
+        permission-message: You do not have <permission>
+    fossil:
+        description: Redeems any fossils you have in your inventory and turns them into pokemon - if no slot is free,  it is sent to your box
+        usage: "/fossil - redeems any fossil in your inventory"
+        permission-message: You do not have <permission>
+    flee:
+        description: Allows you to end any battle (mostly used when a battle gets stuck and you can't make any actions)
+        usage: "/flee - Allows you to leave the current battle"
+        permission-message: You do not have <permission>
+    togglelvl:
+        description: Ngl, Idk atm
+        usage: "/togglelvl - TODO"
+        permission-message: You do not have <permission>
+    spawns:
+        description: Checks the spawns around your area
+        usage: "/spawns - TODO"
+        permission-message: You do not have <permission>
