@@ -22,10 +22,11 @@ public class EVsIntercept implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("checkevs")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "evs");
+                //Check if the player has the correct permissions
+                if (sender.hasPermission("pokedexrewards.checkevs")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "evs ".concat(args[0]));
+                }
             }
             return true;
         }

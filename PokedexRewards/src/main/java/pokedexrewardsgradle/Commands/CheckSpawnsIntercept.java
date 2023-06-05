@@ -22,10 +22,11 @@ public class CheckSpawnsIntercept implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("spawns")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "checkspawns");
+                //Check if the player has the correct permissions
+                if (sender.hasPermission("pokedexrewards.spawns")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "checkspawns");
+                }
             }
             return true;
         }

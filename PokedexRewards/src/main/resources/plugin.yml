@@ -1,12 +1,38 @@
 name: PokedexRewards
 main: pokedexrewardsgradle.PokedexRewardsMain
-version: 0.2
+version: 1.0
 author: Falln
+permissions:
+    pokedexrewards.healer: # Permission for using the 'healer' command
+        description: Allows players to use the healer command
+    pokedexrewards.pcopen: # Permission for using the 'dexreward' command
+        description: Allows players to open their pokePC
+    pokedexrewards.trader: # Permission for using the 'trader' command
+        description: Allows players to open the pixelmon trading terminal
+    pokedexrewards.daycare: # Permission for using the 'daycare' command
+        description: Allows players to open the daycare block interface for breeding pokemon
+    pokedexrewards.checkivs: # Permission for using the 'checkivs' command
+        description: Allows players to check the ivs of a pokemon
+    pokedexrewards.checkevs: # Permission for using the 'checkevs' command
+        description: Allows players to check the evs of a pokemon
+    pokedexrewards.fossil: # Permission for using the 'fossil' command
+        description: Allows players to redeem any fossils in your inventory and turns them into pokemon
+    pokedexrewards.flee: # Permission for using the 'flee' command
+        description: Allows players to flee any battle (especially if they happen to be stuck in a battle)
+    pokedexrewards.togglelvls: # Permission for using the 'togglelvls' command
+        description: Honestly no clue - TODO 
+    pokedexrewards.spawns: # Permission for using the 'spwans' command
+        description: Allows players to check the spanws around your area
+    pokedexrewards.dexreward: # Permission for using the 'dexreward' command
+        description: Allows players to redeem rewards for the number of pokemon in their pokedex
+    
+        
+
 commands:
     healer:
         description: Type this command to heal all of your Pixelmon!
         usage: "/healer - Automatically heals all pokemon in your party"
-        permison-message: You don't have <permission>
+        permission-message: You don't have <permission>
     dexreward:
         description: Command for claiming item rewards that come with collecting a progressively higher ammount of pokemon!
         usage: "/dexrewards claim - Checks if you have an available Pokedex reward to claim"
@@ -39,9 +65,9 @@ commands:
         description: Allows you to end any battle (mostly used when a battle gets stuck and you can't make any actions)
         usage: "/flee - Allows you to leave the current battle"
         permission-message: You do not have <permission>
-    togglelvl:
+    togglelvls:
         description: Ngl, Idk atm
-        usage: "/togglelvl - TODO"
+        usage: "/togglelvls - TODO"
         permission-message: You do not have <permission>
     spawns:
         description: Checks the spawns around your area

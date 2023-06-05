@@ -19,13 +19,14 @@ public class LevelingIntercept implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         //Check if the command sent is the healpokemon command
-        if (cmd.getName().equalsIgnoreCase("togglelvl")){
+        if (cmd.getName().equalsIgnoreCase("togglelvls")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "leveling");
+                //Check if the player has the correct permissions
+                    if (sender.hasPermission("pokedexrewards.leveling")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "leveling ".concat(args[0]).concat(" ").concat(args[1]).concat(" ").concat(args[3]));
+                }
             }
             return true;
         }

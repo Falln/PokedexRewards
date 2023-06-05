@@ -22,10 +22,11 @@ public class EndBattleIntercept implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("flee")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "endbattle");
+                //Check if the player has the correct permissions
+                if (sender.hasPermission("pokedexrewards.flee")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "endbattle");
+                }
             }
             return true;
         }

@@ -22,10 +22,11 @@ public class BreedIntercept implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("daycare")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "breed");
+                //Check if the player has the correct permissions
+                if (sender.hasPermission("pokedexrewards.daycare")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "breed ".concat(args[0]).concat(" ").concat(args[1]).concat(" ").concat(args[2]));
+                }
             }
             return true;
         }

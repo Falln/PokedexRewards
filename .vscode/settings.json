@@ -1,4 +1,7 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "yaml.schemas": {
+        "https://json.schemastore.org/bukkit-plugin.json": "file:///c%3A/Users/Falln/Documents/Program%20Projects/Pokedex%20Rewards/PokedexRewards/PokedexRewards/src/main/resources/plugin.yml"
+    }
 }

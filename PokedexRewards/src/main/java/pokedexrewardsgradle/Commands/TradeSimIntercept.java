@@ -22,10 +22,11 @@ public class TradeSimIntercept implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("trader")){
             //Check if the one sending the command is a player
             if (sender instanceof Player) {
-                //TODO maybe: Check if the person has the permission to send the command
-
-                //Intercept the command and use pixelmon's heal command instead
-                Bukkit.dispatchCommand(sender, "tradesim");
+                //Check if the player has the correct permissions
+                if (sender.hasPermission("pokedexrewards.trader")) {
+                    //Intercept the command and use pixelmon's heal command instead
+                    Bukkit.dispatchCommand(sender, "tradesim ".concat(args[0]).concat(" ").concat(args[1]));
+                }
             }
             return true; 
         }
